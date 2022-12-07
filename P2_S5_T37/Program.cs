@@ -33,20 +33,16 @@ Console.WriteLine();
 PrintAr(array);
 int[] NewArr(int[] arr,int[] arr2)
 {
-int k =0;
-int l =1;
-int m = 0;
-while (k<arr.Length && l <= arr.Length && m < arr2.Length)
+for (int i = 0;i<ArrLen(arr.Length);i++)
 {
-    arr2[m] = arr[k] *arr[^l];
-    k++;
-    l++;
-    m++;
-    if(m ==arr2.Length-1)
-    {
-    arr2[m] = arr[^m];
-    }
+	arr2[i]=arr[i] * arr[arr.Length -1-i];
+	if(arr.Length%2!= 0 && i==ArrLen(arr.Length) -1)
+		arr2[i] = arr[i];
 }
+
+
 return arr2;
 }
 PrintAr(NewArr(array,array2));
+Console.WriteLine(array.Length);
+Console.WriteLine(array2.Length);
