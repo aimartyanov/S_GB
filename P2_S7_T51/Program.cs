@@ -21,21 +21,22 @@ void PrintArr(int[,] array)
         Console.WriteLine();
     }
 }
-int[,] PowArr(int[,] array)
+int SumArr(int[,] array)
 {
+    int sum =0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if(i %2 == 0 && j %2 ==0 && i > 0 && j > 0)
-            array[i, j] *= array[i,j] ;
+            if(i == j)
+            sum += array[i,j] ;
         }
     }
-    return array;
+    return sum;
 }
 int[,] array = new int[m, n];
 FillArr(array);
 PrintArr(array);
 Console.WriteLine();
 
-PrintArr(PowArr(array));
+Console.WriteLine(SumArr(array));
